@@ -23,11 +23,13 @@ See `fritzing/ratpack_wifly.fzz` for the needed components and the wiring of you
 
 Find the arduino software in `arduino/ratpack_wifly`. All you have to do is adjust the `Config.h` file with your wify credentials and the rat pack server's host data:
 
-    // Wifi parameters
-    char passphrase[] = "YOUR PASSPHRASE";
-    char ssid[] = "YOUR SSID";
-    // ratpack server
-    char* HOST         = "YOUR SINATRA SERVER";
+```c
+// Wifi parameters
+char passphrase[]  = "YOUR PASSPHRASE";
+char ssid[]        = "YOUR SSID";
+// ratpack server
+char* HOST         = "YOUR SINATRA SERVER";
+```
 
 ### Enjoy your rat pack remote control
 
