@@ -11,7 +11,7 @@ $(document).ready(function() {
         },
         complete: ratpack.poll(),
       });
-      }, 500)
+      }, 2000)
     };
     ratpack.turnOffButton = function(){
       var button = $('.btn.on');
