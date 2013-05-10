@@ -31,6 +31,10 @@ char ssid[]        = "YOUR SSID";
 char* HOST         = "YOUR SINATRA SERVER";
 ```
 
+### Run your rat pack server on heroku
+
+Create a [new heroku app](https://devcenter.heroku.com/articles/quickstart) to deploy the whole thing to. Jot down the server's url (something.herokuapp.com) and use it in the `arduino/Config.h` file mentioned above.
+
 ### Enjoy your rat pack remote control
 
 If you keep the button on your breadboard pushed it won't take long until you see the reaction in your browser. Also mind the LED is actually tracking the server's response, so it's online too. Voilá, you just entered the Internet Of Things (tm)!
