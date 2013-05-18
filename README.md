@@ -19,7 +19,11 @@ You can test drive if the server reacts without using the actual remote control 
 
 ### Build the rat pack remote control
 
-See `fritzing/ratpack_wifly.fzz` for the needed components and the wiring of your remote control. If you aren't using Fritzing already you can download it [here](http://fritzing.org/download/).
+See `fritzing/ratpack_wifly.fzz` for the needed components and the wiring of your remote control. 
+
+![Rat Pack Fritzing Sketch](https://github.com/5v3n/ratpack/blob/master/fritzing/ratpack_wifly.png?raw=true)
+
+If you aren't using Fritzing already you can download it [here](http://fritzing.org/download/).
 
 Find the arduino software in `arduino/ratpack_wifly`. All you have to do is adjust the `Config.h` file with your wify credentials and the rat pack server's host data:
 
