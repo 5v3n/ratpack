@@ -1,13 +1,18 @@
 require 'sinatra'
 require 'json'
 require 'haml'
+require 'rack/logger'
 
 class RatPackServer < Sinatra::Application
-  configure do
-    set :activated, 0
-    set :logging, ENV['LOG_LEVEL']
-  end
+  configure()             { set :activated, 0 }
+  configure(:development) { set :logging, Logger::DEBUG }
+  configure(:production)  { set :logging, Logger::INFO }
+  configure(:test)        { disable :logging }
+ 
   get '/' do
+    redirect '/status.html'
+  end
+  get '/status.html' do
     haml :index, :locals => {:activated => settings.activated, :indicator_class => indicator(settings.activated)}
   end
   get '/status.json' do
@@ -26,6 +31,6 @@ private
     state == 0 ? :off : :on
   end
   def render_status_response
-    "{\"activated\": #{settings.activated}}"
+    {activated: settings.activated}.to_json
   end
 end

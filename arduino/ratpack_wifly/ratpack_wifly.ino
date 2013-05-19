@@ -61,7 +61,7 @@ void loop(){
   
   if (client.available()) {
     // receiving status from server
-    if(client.find("\"activated\": ")){
+    if(client.find("\"activated\":")){
       char state[1];
       client.readBytes(state, 1);
       if(atoi(state) == 1){
