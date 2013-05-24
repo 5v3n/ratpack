@@ -6,12 +6,12 @@ char passphrase[] = "YOUR PASSPHRASE";
 char ssid[] = "YOUR SSID";
 // ratpack server
 char* HOST         = "YOUR SINATRA SERVER";
-char* USERAGENT    = "ratpack-workshop/alpha";
+char* USERAGENT    = "ratpack-client";
 char* RESOURCE     = "/status.json";
 //io settings
 byte buttonPin            = 2;    // button pin 
 byte ledPin               = 9;   // led pin
-//misc
-long unsigned int pause   = 1000;
+
+const unsigned long IO_INTERVAL = 1*1337;  // delay between updates, in milliseconds
 
 #endif
