@@ -98,7 +98,7 @@ void loop() {
   
     //-------------------- signalling led part -------------------------------------
     char postString[255];
-    sprintf(postString, "GET %s HTTP/1.1\r\nHost: %s\r\nUser-Agent: %s\r\nConnection: close\r\n", RESOURCE, HOST, USERAGENT);
+    sprintf(postString, "GET %s HTTP/1.1\r\nHost: %s\r\nUser-Agent: %s\r\n", RESOURCE, HOST, USERAGENT);
     connectClient(clientLed, postString);
   }
   // store the state of the connection for next time through

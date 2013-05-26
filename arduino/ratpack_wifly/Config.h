@@ -12,6 +12,6 @@ char* RESOURCE     = "/status.json";
 byte buttonPin            = 2;    // button pin 
 byte ledPin               = 9;   // led pin
 
-const unsigned long IO_INTERVAL = 1*1337;  // delay between updates, in milliseconds
+const unsigned long IO_INTERVAL = 0.5*1337;  // delay between updates, in milliseconds
 
 #endif
