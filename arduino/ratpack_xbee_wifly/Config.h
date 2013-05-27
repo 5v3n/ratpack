@@ -5,7 +5,7 @@
 char passphrase[] = "YOUR PASSPHRASE";
 char ssid[] = "YOUR SSID";
 // ratpack server
-char* HOST         = "YOUR SINATRA SERVER";
+char* HOST         = "YOUR RAT PACK SERVER";
 char* USERAGENT    = "ratpack-client/xbee-wifly-shield";
 char* RESOURCE     = "/status.json";
 //io settings
