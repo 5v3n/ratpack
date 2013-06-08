@@ -29,7 +29,7 @@ void setup(){
   //------------------------ led setup ------------------------
   pinMode(ledPin, OUTPUT);      
   //------------------------ button setup ------------------------
-  pinMode(buttonPin, INPUT);    
+  pinMode(buttonPin, INPUT);
   //------------------------ wifly setup ----------------------------------
   Serial.begin(9600);
   WiFly.setUart(&Serial);
@@ -58,7 +58,6 @@ void loop() {
       client.stop();
     }
     else if(digitalRead(buttonPin) == HIGH){
-      Serial.println("local arduino says: Button IS pressed!");
       //--------- send status to server 
       connectClient(generateHttpPut(HOST, RESOURCE, '1'));
       client.stop();
