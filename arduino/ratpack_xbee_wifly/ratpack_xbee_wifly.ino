@@ -30,6 +30,8 @@ void setup(){
   pinMode(ledPin, OUTPUT);      
   //------------------------ button setup ------------------------
   pinMode(buttonPin, INPUT);
+  //use internal 10k
+  digitalWrite(buttonPin, HIGH);
   //------------------------ wifly setup ----------------------------------
   Serial.begin(9600);
   WiFly.setUart(&Serial);
@@ -52,12 +54,12 @@ void loop() {
   // your last connection, then connect again and send data:
   if(!client.connected() && (millis() - lastConnectionTime > IO_INTERVAL)) {
     //------------------- button part ---------------------------------------
-    if(digitalRead(buttonPin) == LOW){
+    if(digitalRead(buttonPin) == HIGH){
       //--------- send status to server
       connectClient(generateHttpPut(HOST, RESOURCE, '0'));
       client.stop();
     }
-    else if(digitalRead(buttonPin) == HIGH){
+    else if(digitalRead(buttonPin) == LOW){
       //--------- send status to server 
       connectClient(generateHttpPut(HOST, RESOURCE, '1'));
       client.stop();
