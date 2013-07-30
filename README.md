@@ -1,4 +1,5 @@
-[![Stories in Ready](https://badge.waffle.io/5v3n/ratpack.png)](http://waffle.io/5v3n/ratpack)  
+[![Stories in Ready](https://badge.waffle.io/5v3n/ratpack.png)](http://waffle.io/5v3n/ratpack)  [![Build Status](https://travis-ci.org/5v3n/ratpack.png?branch=master)](https://travis-ci.org/5v3n/ratpack)
+
 # Rat Pack - the internet of things's basic building block
 
 ## Abstract
