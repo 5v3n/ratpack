@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/5v3n/ratpack.png)](http://waffle.io/5v3n/ratpack)  
 # Rat Pack - the internet of things's basic building block
 
 ## Abstract
@@ -41,4 +42,4 @@ Create a [new heroku app](https://devcenter.heroku.com/articles/quickstart) to d
 
 ### Enjoy your rat pack remote control
 
-If you keep the button on your breadboard pushed it won't take long until you see the reaction in your browser. Also mind the LED is actually tracking the server's response, so it's online too. Voilá, you just entered the Internet Of Things (tm)!
+If you keep the button on your breadboard pushed it won't take long until you see the reaction in your browser. Also mind the LED is actually tracking the server's response, so it's online too. VoilC!, you just entered the Internet Of Things (tm)!
