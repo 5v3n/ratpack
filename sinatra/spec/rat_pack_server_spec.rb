@@ -4,9 +4,7 @@ require 'rack/test'
 
 describe RatPackServer do
   include Rack::Test::Methods
-  def app
-    RatPackServer
-  end
+  include Capybara::DSL
   describe "/" do
     it "redirects to '/status.html'" do
       get '/'
@@ -41,6 +39,14 @@ describe RatPackServer do
         get '/status.html'
         last_response.status.should == 200
         last_response.body.should include 'off'
+      end
+      it "provides a html page with realtime status updates", js: true, type: :feature do
+        visit '/status.html'
+        find('.btn.off').should be
+        put '/status.json', request_params_activated
+        find('.btn.on').should be
+        put '/status.json', request_params_deactivated
+        find('.btn.off').should be
       end
     end
   end
