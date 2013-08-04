@@ -1,3 +1,7 @@
 language: ruby
 rvm:
   - 2.0.0
+#selenium webkit needs an x-server
+before_install:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
