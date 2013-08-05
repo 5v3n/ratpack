@@ -15,7 +15,7 @@ gem 'foreman'
 group :test do
   gem 'rspec'
   gem 'capybara'
-  gem 'capybara-webkit'
+  gem 'poltergeist'
   gem 'rack-test'
   gem 'simplecov'
 end
