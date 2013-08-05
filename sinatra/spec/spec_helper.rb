@@ -23,5 +23,5 @@ Capybara.app_host = "http://0.0.0.0:#{APP_PORT}"
 
 RSpec.configure do |config|
   config.include Capybara::DSL
-  Capybara.javascript_driver = :webkit
+  Capybara.javascript_driver = :selenium
 end
