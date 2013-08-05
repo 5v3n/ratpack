@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'faye'
 require 'json'
 require 'haml'
 require 'rack/logger'
@@ -21,7 +22,11 @@ class RatPackServer < Sinatra::Application
   put '/status.json' do
     request.body.rewind  # in case someone already read it
     data = JSON.parse request.body.read
-    settings.activated = data['activated']
+    if settings.activated != data['activated']
+      logger.info "change detected, activated = #{settings.activated}. sending update to faye subscribers..."
+      settings.activated = data['activated']
+      faye_client.publish('/status/realtime', {activated: settings.activated})
+    end
     logger.debug "data    : #{data}"
     logger.debug "response: #{render_status_response}"
     render_status_response
@@ -32,5 +37,8 @@ private
   end
   def render_status_response
     {activated: settings.activated}.to_json
+  end
+  def faye_client
+    env['faye.client'] || Faye::Client.new("http://#{request.host_with_port}/faye")
   end
 end
