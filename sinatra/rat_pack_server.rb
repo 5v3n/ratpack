@@ -23,8 +23,8 @@ class RatPackServer < Sinatra::Application
     request.body.rewind  # in case someone already read it
     data = JSON.parse request.body.read
     if settings.activated != data['activated']
-      logger.info "change detected, activated = #{settings.activated}. sending update to faye subscribers..."
       settings.activated = data['activated']
+      logger.info "change detected, activated = #{settings.activated}. sending update to faye subscribers..."
       faye_client.publish('/status/realtime', {activated: settings.activated})
     end
     logger.debug "data    : #{data}"
