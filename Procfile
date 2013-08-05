@@ -1,1 +1,1 @@
-web: bundle exec unicorn -p $PORT
+web: bundle exec thin start -R ./sinatra/config.ru -p $PORT
