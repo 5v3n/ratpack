@@ -1,6 +1,5 @@
 require 'rspec'
 require 'capybara/rspec'
-require 'capybara/webkit'
 require 'simplecov'
 SimpleCov.start
 require_relative '../rat_pack_server'

@@ -15,7 +15,7 @@ gem 'foreman'
 group :test do
   gem 'rspec'
   gem 'capybara'
-  gem 'selenium'
+  gem 'selenium-webdriver'
   gem 'rack-test'
   gem 'simplecov'
   gem 'curb'
