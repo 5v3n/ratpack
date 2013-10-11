@@ -6,6 +6,8 @@
 
 Frank, Sammy & Dean were a great team known as the "Rat Pack". What's true for these fellows is also true for Sinatra, Ruby and Arduino: put them together for instant Internet Of Things awesomeness!
 
+For an example of what you can build with the Rat Pack, check the [Arduino blog post](http://blog.arduino.cc/2013/09/23/the-yun-way/) on the subject.
+
 ## How to
 
 ### Run the rat pack server locally
