@@ -1,5 +1,5 @@
 require 'faye'
-require File.expand_path('../rat_pack_server', __FILE__)
+require File.expand_path('../sinatra/rat_pack_server', __FILE__)
 
 Faye::WebSocket.load_adapter('thin')
 

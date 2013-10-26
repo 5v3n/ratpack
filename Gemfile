@@ -2,11 +2,13 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 
+gem "shelly-dependencies", :group => :production
+
 gem 'rake'
 gem 'sinatra'
 gem 'haml'
 
-gem 'faye'
+gem 'faye', '>=1.0.0'
 
 gem 'thin'
 

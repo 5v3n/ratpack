@@ -9,7 +9,7 @@ ENV['RACK_ENV'] = 'test'
 APP_PORT=4180
 
 def app
-  builder = Rack::Builder.parse_file(File.dirname(__FILE__) + '/../config.ru')
+  builder = Rack::Builder.parse_file(File.dirname(__FILE__) + '/../../config.ru')
   builder.first
 end
 

@@ -1,7 +1,14 @@
-require 'rspec/core/rake_task'
+if ['development','test'].include? ENV['RACK_ENV'] 
+  require 'rspec/core/rake_task'
+    RSpec::Core::RakeTask.new(:spec) do |t|
+      t.pattern="./sinatra/spec{,/*/**}/*_spec.rb"
+    end
 
-RSpec::Core::RakeTask.new(:spec) do |t|
-  t.pattern="./sinatra/spec{,/*/**}/*_spec.rb"
+    task :default => :spec
 end
 
-task :default => :spec
+desc 'fake tasks needed by shelly'
+namespace :db do
+  task :migrate
+  task :setup
+end
