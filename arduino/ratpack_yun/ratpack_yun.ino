@@ -10,6 +10,8 @@
 #include <Process.h>
 #include "Config.h"
 
+char commandBuffer[255]; //it's crude - feel free to handle the commandBuffer length more elegant
+
 void setup() {
   // Initialize Bridge
   Bridge.begin();
@@ -46,8 +48,15 @@ void loop() {
 }
 
 void receiveState() {
+  commandBuffer[0] = '\0';
+  sprintf(commandBuffer, "curl %s/status.json", HOST);
+  
   Process p;
-  p.runShellCommand("curl http://ratpack.makingthingshappen.de/status.json");
+  p.runShellCommand(commandBuffer);
+  
+#ifdef DEBUG
+  Serial.println(commandBuffer);
+#endif
 
   while(p.running());  //wait
   
@@ -78,7 +87,7 @@ void sendState(byte state) {
   Serial.println((char)state);
  #endif
  
-  char commandBuffer[255]; //it's crude - feel free to handle the commandBuffer length more elegant
+  commandBuffer[0] = '\0';
   sprintf(commandBuffer, "curl -X PUT -d \"{\\\"activated\\\": %c}\" http://%s/status.json", state, HOST);
   
 #ifdef DEBUG
